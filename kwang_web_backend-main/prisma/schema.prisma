@@ -1,0 +1,185 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+// ผลงาน
+model Solution {
+  id               String   @id @default(auto()) @map("_id") @db.ObjectId
+  projectName      String
+  description      String
+  linkVideoPreview String
+  date             DateTime @default(now())
+  linkPresentSheet String
+  type             String
+  tag              String
+}
+// สินค้า
+model Products_cctv {
+  Products_id   String   @id @default(auto()) @map("_id") @db.ObjectId
+  ProductBrand  String
+  ProductCode   String
+  type          String
+  price         Int
+  salePercent   Int
+  dateSell      DateTime @default(now())
+  Keyfeature    String
+  DataSheetLink String
+  Color         Json
+  len           Json
+  image         String
+  images        String[]
+  tag           Json
+}
+
+model Products_solarcell {
+  Products_id   String   @id @default(auto()) @map("_id") @db.ObjectId
+  ProductBrand  String
+  ProductCode   String
+  type          String
+  price         Int
+  salePercent   Int
+  dateSell      DateTime @default(now())
+  Keyfeature    String
+  DataSheetLink String
+  Color         Json
+  image         String
+  images        String[]
+  tag           Json
+  Power         String
+}
+
+model Products_recorder {
+  Products_id   String   @id @default(auto()) @map("_id") @db.ObjectId
+  ProductBrand  String
+  ProductCode   String
+  type          String
+  price         Int
+  salePercent   Int
+  dateSell      DateTime @default(now())
+  Keyfeature    String
+  DataSheetLink String
+  Color         Json
+  image         String
+  images        String[]
+  tag           Json
+  Port          String
+}
+
+model Products_networkswitch {
+  Products_id   String   @id @default(auto()) @map("_id") @db.ObjectId
+  ProductBrand  String
+  ProductCode   String
+  type          String
+  price         Int
+  salePercent   Int
+  dateSell      DateTime @default(now())
+  Keyfeature    String
+  DataSheetLink String
+  Color         Json
+  image         String
+  images        String[]
+  tag           Json
+  Port          String
+}
+
+model Products_ledwall {
+  Products_id   String   @id @default(auto()) @map("_id") @db.ObjectId
+  ProductBrand  String
+  ProductCode   String
+  type          String
+  price         Int
+  salePercent   Int
+  dateSell      DateTime @default(now())
+  Keyfeature    String
+  DataSheetLink String
+  Color         Json
+  image         String
+  images        String[]
+  tag           Json
+  Pixel_Pitch   String
+}
+
+model Products_inverter {
+  Products_id   String   @id @default(auto()) @map("_id") @db.ObjectId
+  ProductBrand  String
+  ProductCode   String
+  type          String
+  price         Int
+  salePercent   Int
+  dateSell      DateTime @default(now())
+  Keyfeature    String
+  DataSheetLink String
+  Color         Json
+  image         String
+  images        String[]
+  tag           Json
+  MaximumPower  String
+}
+
+model Products_interactive {
+  Products_id   String   @id @default(auto()) @map("_id") @db.ObjectId
+  ProductBrand  String
+  ProductCode   String
+  type          String
+  price         Int
+  salePercent   Int
+  dateSell      DateTime @default(now())
+  Keyfeature    String
+  DataSheetLink String
+  Color         Json
+  image         String
+  images        String[]
+  tag           Json
+  Size          String
+}
+
+model Products_airsolarcell {
+  Products_id   String   @id @default(auto()) @map("_id") @db.ObjectId
+  ProductBrand  String
+  ProductCode   String
+  type          String
+  price         Int
+  salePercent   Int
+  dateSell      DateTime @default(now())
+  Keyfeature    String
+  DataSheetLink String
+  Color         Json
+  image         String
+  images        String[]
+  tag           Json
+  BTU           String
+}
+
+model Products_accesscontrol {
+  Products_id   String   @id @default(auto()) @map("_id") @db.ObjectId
+  ProductBrand  String
+  ProductCode   String
+  type          String
+  price         Int
+  salePercent   Int
+  dateSell      DateTime @default(now())
+  Keyfeature    String
+  DataSheetLink String
+  Color         Json
+  image         String
+  images        String[]
+  tag           Json
+}
+// Bill Model Save Log
+
+// follow project
+model Follow_project {
+  project_id   String   @id @default(auto()) @map("_id") @db.ObjectId
+  projectName      String
+  description      String
+  linkVideoPreview String
+  date             DateTime @default(now())
+  linkPresentSheet String
+  type             String
+  tag              String
+  phase            String[]
+}
