@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon src/index.ts",
-    "build": "tsc",
-    "start": "nodemon src/index.ts"
+    "build": "npx prisma generate && tsc",
+    "start": "node dist/index.js"
   },
   "author": "ZeroSRC",
   "license": "ISC",
