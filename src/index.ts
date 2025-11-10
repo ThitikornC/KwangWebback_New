@@ -26,10 +26,12 @@ app.use('/products', productRoutes);
 app.get('/', (req, res) => {
   res.send('Hello Kwang Company LTD!');
 })
-const server = app.listen(8080, () =>
+
+const PORT = process.env.PORT || 8080;
+const server = app.listen(PORT, () =>
   console.log(`
   🪶 Kwang Unlimit Company LTD. Ready !!
-  🚀 Server ready at: http://localhost:8080
+  🚀 Server ready at: http://localhost:${PORT}
   ⭐️ See sample requests: http://pris.ly/e/ts/rest-express#3-using-the-rest-api
   `),
 )
